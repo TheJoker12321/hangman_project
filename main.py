@@ -1,6 +1,7 @@
 from hangman.words import choose_secret_word
 from hangman.game import *
 from hangman.io import *
+from data.words import word
 
 def play(words: list[str], max_tries: int = 6) -> None:
     secret_word = choose_secret_word(words)
@@ -31,5 +32,4 @@ def play(words: list[str], max_tries: int = 6) -> None:
     print_result(state)
 
 if __name__ == "__main__":
-    word = ["בננה", "תפוח", "חציל", "עגבניה", "מלפפון", "מחשב"]
     play(word)
