@@ -10,3 +10,8 @@ def validate_guess(ch: str, guessed: set[str]) -> tuple[bool, str]:
     return True, f"{ch} was not guessed"
 
 
+def apply_guess(state: dict, ch: str) -> bool:
+    if ch in state["secret"]:
+        return True
+    return False
+
