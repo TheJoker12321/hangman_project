@@ -29,6 +29,9 @@ def is_lost(state: dict) -> bool:
         return True
     return False
 
+def render_display(state: dict) -> str:
+    return "".join(state["display"])
+
 def render_summary(state: dict) -> str:
     secret_word = state["secret"]
     word_guessed = " , ".join(state["guessed"])
