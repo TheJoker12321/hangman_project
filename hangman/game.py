@@ -1,6 +1,6 @@
 def init_state(secret: str, max_tries: int) -> dict:
     display = len(secret)
-    new_dict = {"secret": secret, "display": "".join(["_" for _ in range(display)]),
+    new_dict = {"secret": secret, "display": ["_" for _ in range(display)],
                 "guessed": set(),"wrong_guesses": 0, "max_tries": max_tries }
     return new_dict
 
@@ -28,6 +28,11 @@ def is_lost(state: dict) -> bool:
     if state["wrong_guesses"] >= state["max_tries"]:
         return True
     return False
+
+def render_summary(state: dict) -> str:
+    secret_word = state["secret"]
+    word_guessed = " , ".join(state["guessed"])
+    return secret_word + " " + word_guessed
 
 
 
