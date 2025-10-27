@@ -4,3 +4,9 @@ def init_state(secret: str, max_tries: int) -> dict:
                 "guessed": set(),"wrong_guesses": 0, "max_tries": max_tries }
     return new_dict
 
+def validate_guess(ch: str, guessed: set[str]) -> tuple[bool, str]:
+    if ch in guessed:
+        return False, f"{ch} has already been deciphered "
+    return True, f"{ch} was not guessed"
+
+
