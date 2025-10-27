@@ -35,7 +35,7 @@ def render_display(state: dict) -> str:
 def render_summary(state: dict) -> str:
     secret_word = state["secret"]
     word_guessed = " , ".join(state["guessed"])
-    return secret_word + " " + word_guessed
+    return secret_word + " The words you guessed: [" + word_guessed + "]"
 
 
 
