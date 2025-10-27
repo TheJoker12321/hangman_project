@@ -17,6 +17,14 @@ def apply_guess(state: dict, ch: str) -> bool:
         return True
     return False
 
-# def is_won(state: dict) -> bool:
+def is_won(state: dict) -> bool:
+    letter_word = [i for i in state["secret"]]
+    for i in letter_word:
+        if i not in state["guessed"]:
+            return False
+    return True
+
+
+
 
 
