@@ -28,5 +28,13 @@ def print_status(state: dict) -> None:
         if "_" not in state["display"]:
             break
 
+def print_result(state: dict) -> None:
+    if "_" not in state["display"]:
+        print("You won!!!")
+    else:
+        print("You lose!!")
+    print("The word is: ", render_summary(state))
+
+
 
 
